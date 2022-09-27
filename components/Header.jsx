@@ -12,7 +12,7 @@ import {
 
 const Header = () => {
 	return (
-		<header className="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center h-auto">
+		<header className="flex flex-col-reverse sm:flex-row justify-between items-center h-auto m-5">
 			<div className="flex justify-between items-center flex-grow max-w-2xl">
 				<NavItems title="HOME" Icon={HomeIcon} />
 				<NavItems title="TRENDING" Icon={LightBulbIcon} />
