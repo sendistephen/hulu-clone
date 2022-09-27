@@ -1,3 +1,13 @@
+import Head from "next/head";
+import Header from "../components/Header";
+
 export default function Home() {
-	return <p className="text-7xl text-blue-900">Hello World</p>;
+	return (
+		<div>
+			<Head>
+				<title>Hulu Clone</title>
+			</Head>
+			<Header />
+		</div>
+	);
 }
