@@ -20,8 +20,9 @@ export default function Home({ results }) {
 
 export async function getServerSideProps(context) {
 	const genre = context.query.genre;
+	
 	const request = await fetch(
-		`${process.env.NEXT_PUBLIC_API_URL}${requests[genre]?.url || requests.fetchTrending.url}`
+		`${process.env.NEXT_PUBLIC_API_URL}${requests[genre]?.url || requests.trending.url}`
 	).then((res) => res.json());
 	return {
 		props: {

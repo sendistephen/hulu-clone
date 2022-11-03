@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -8,9 +7,7 @@ const Casts = ({ movie }) => {
 	useEffect(() => {
 		async function fetchCasts() {
 			const data = await fetch(
-				`${process.env.NEXT_PUBLIC_API_URL}/${movie?.media_type === "tv" ? "tv" : "movie"}/${
-					movie?.id
-				}/credits?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+				`${process.env.NEXT_PUBLIC_API_URL}/movie/${movie?.id}/credits?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
 			)
 				.then((res) => res.json())
 				.catch((err) => console.log(err.message));

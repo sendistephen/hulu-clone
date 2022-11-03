@@ -12,14 +12,9 @@ import {
 
 const Header = () => {
 	return (
-		<header className="flex flex-col-reverse sm:flex-row justify-between items-center h-auto m-5">
-			<div className="flex justify-between items-center flex-grow max-w-2xl">
-				<NavItems title="HOME" Icon={HomeIcon} />
-				<NavItems title="TRENDING" Icon={LightBulbIcon} />
-				<NavItems title="VERIFIED" Icon={CheckBadgeIcon} />
-				<NavItems title="COLLECTIONS" Icon={QueueListIcon} />
+		<header className="flex flex-col-reverse items-center justify-between h-auto m-5 sm:flex-row">
+			<div className="flex items-center justify-between flex-grow max-w-2xl">
 				<NavItems title="SEARCH" Icon={MagnifyingGlassIcon} />
-				<NavItems title="ACCOUNT" Icon={UserIcon} />
 			</div>
 			<Image
 				className="object-contain"

@@ -9,9 +9,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
 		result?.name || result?.original_name || result?.original_title?.split(":").join("");
 	const slugFinal = slugStart?.split(" ").join("-");
 
-	
-	console.log(result);
-	return (
+		return (
 		<Link href={`/movie/${result?.id}-${slugFinal?.toLowerCase()}`}>
 			<div
 				ref={ref}

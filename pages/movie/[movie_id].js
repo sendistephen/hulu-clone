@@ -1,17 +1,10 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import React from "react";
 import Banner from "../../components/Banner";
 import Casts from "../../components/Casts";
 import Videos from "../../components/Videos";
 
 const MovieDetails = ({ movie }) => {
-	const { asPath } = useRouter();
-	if (asPath.includes("tv")) {
-		console.log("YESS");
-	} else {
-		console.log("NO");
-	}
 	return (
 		<div className="w-full">
 			<Head>
@@ -68,7 +61,7 @@ const MovieDetails = ({ movie }) => {
 			</div>
 			{/*2. Top bill casts */}
 			<Casts movie={movie} />
-			{/* Recommendations */}
+			{/* TODO: Recommendations */}
 		</div>
 	);
 };
