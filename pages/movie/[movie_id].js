@@ -6,8 +6,6 @@ import Casts from "../../components/Casts";
 import Videos from "../../components/Videos";
 
 const MovieDetails = ({ movie }) => {
-	const params = useRouter();
-
 	return (
 		<div className="w-full">
 			<Head>
@@ -63,7 +61,7 @@ const MovieDetails = ({ movie }) => {
 				</div>
 			</div>
 			{/*2. Top bill casts */}
-			<Casts/>
+			<Casts movie={movie} />
 			{/* Recommendations */}
 		</div>
 	);
@@ -74,7 +72,6 @@ export default MovieDetails;
 export async function getServerSideProps(context) {
 	const { movie_id } = context.query;
 	const id = parseInt(movie_id.split("-")[0]);
-	console.log({ context });
 
 	const response = await fetch(
 		`${process.env.NEXT_PUBLIC_API_URL}/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&append_to_response=videos`
