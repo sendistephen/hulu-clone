@@ -9,8 +9,10 @@ const Thumbnail = forwardRef(({ result }, ref) => {
 		result?.name || result?.original_name || result?.original_title?.split(":").join("");
 	const slugFinal = slugStart?.split(" ").join("-");
 
+	
+	console.log(result);
 	return (
-		<Link href={`/${result?.media_type}/${result?.id}-${slugFinal?.toLowerCase()}`}>
+		<Link href={`/movie/${result?.id}-${slugFinal?.toLowerCase()}`}>
 			<div
 				ref={ref}
 				className="transition-all duration-200 ease-in transform cursor-pointer group sm:hover:scale-105 hover:z-50">

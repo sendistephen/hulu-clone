@@ -6,6 +6,12 @@ import Casts from "../../components/Casts";
 import Videos from "../../components/Videos";
 
 const MovieDetails = ({ movie }) => {
+	const { asPath } = useRouter();
+	if (asPath.includes("tv")) {
+		console.log("YESS");
+	} else {
+		console.log("NO");
+	}
 	return (
 		<div className="w-full">
 			<Head>

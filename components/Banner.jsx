@@ -4,9 +4,9 @@ import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Banner = ({ movie }) => {
 	return (
-		<div className="bg-gradient-to-t from-[#111]">
+		<div className="">
 			<div className="relative flex flex-col py-16 space-y-2 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12 overflow-y-hidden">
-				<div className="absolute top-0 left-0 w-screen h-[75vh] -z-20">
+				<div className="absolute top-0 left-0 w-screen h-[75vh] -z-50">
 					<Image
 						src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${
 							movie?.backdrop_path || movie?.poster_path
@@ -36,11 +36,10 @@ const Banner = ({ movie }) => {
 							<PlayIcon className="w-5 h-5 text-black md:h-6 md:w-6" />
 							<span>Play Trailer</span>
 						</button>
-						<div className="flex gap-4"></div>
 					</div>
 				</div>
 			</div>
-			<div className="absolute inset-0 z-50 w-full h-full bg-black opacity-50"></div>
+			<div className="absolute inset-0 z-50 w-full h-full bg-black opacity-50" />{" "}
 		</div>
 	);
 };

@@ -21,21 +21,27 @@ const Casts = ({ movie }) => {
 		}
 		fetchCasts();
 	}, [movie]);
-	console.log(casts);
+
+	const casters = casts?.filter((member) => member.profile_path !== null);
+
 	return (
 		<div className="px-6 sm:px-16">
 			<h1 className="my-4 text-xl font-bold text-green-400">Top Billed Casts</h1>
 			<div className="flex gap-4 overflow-x-scroll">
-				{casts?.map((member) => (
-					<div key={member.id} className="w-full">
-						<img
-							className="object-cover"
-							src={`https://image.tmdb.org/t/p/w400${member.profile_path}`}
+				{casters?.map((member) => (
+					<div key={member.id} className="relative w-full h-64">
+						<Image
+							src={`https://image.tmdb.org/t/p/w300${member.profile_path}`}
 							alt={member.character}
+							width="150px"
+							height="250px"
+							objectFit="cover"
+							layout="fixed"
 						/>
-						<div className="mt-2 space-y-1 text-sm">
-							<p className="font-medium text-green-400">{member.name}</p>
-							<p className="text-xs text-white">{member.character}</p>
+
+						<div className="absolute bottom-0 w-full px-4 py-4 mt-2 space-y-1 text-xs bg-red-400">
+							<p className="font-medium text-black">{member.name}</p>
+							<p className="text-dimWhite">{member.character}</p>
 						</div>
 					</div>
 				))}
