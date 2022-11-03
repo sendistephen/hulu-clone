@@ -1,8 +1,17 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Results from "../components/Results";
 import requests from "../utils/requests";
 
 export default function Home({ results }) {
+	const router = useRouter();
+	useEffect(() => {
+		if (router.pathname === "/") {
+			router.push("/?genre=trending");
+		}
+	}, []);
+
 	return (
 		<div className="w-full overflow-hidden">
 			<Head>
@@ -20,7 +29,7 @@ export default function Home({ results }) {
 
 export async function getServerSideProps(context) {
 	const genre = context.query.genre;
-	
+
 	const request = await fetch(
 		`${process.env.NEXT_PUBLIC_API_URL}${requests[genre]?.url || requests.trending.url}`
 	).then((res) => res.json());
