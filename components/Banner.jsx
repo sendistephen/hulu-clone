@@ -8,7 +8,6 @@ const Banner = ({ movie }) => {
 			<div className="relative flex flex-col py-16 space-y-2 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12 overflow-y-hidden">
 				<div className="absolute top-0 left-0 w-screen h-[75vh] -z-20">
 					<Image
-						className=""
 						src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${
 							movie?.backdrop_path || movie?.poster_path
 						}`}
@@ -18,10 +17,10 @@ const Banner = ({ movie }) => {
 					/>
 				</div>
 				<div className="px-8 sm:px-16">
-					<h1 className="text-2xl font-bold text-shadow-xl text-dimWhite md:text-4xl lg:text-7xl">
+					<h1 className="text-2xl font-bold text-green-400 text-shadow md:text-4xl lg:text-7xl">
 						{movie?.title || movie?.original_title || movie?.name || movie?.original_name}
 					</h1>
-					<div className="flex items-center gap-2 my-4 text-xs">
+					<div className="flex flex-wrap items-center gap-2 my-4 text-xs">
 						<span>Released on {movie.release_date}</span> |
 						{movie.genres?.map((genre) => (
 							<span key={genre.id}>{genre.name}</span>
@@ -29,7 +28,7 @@ const Banner = ({ movie }) => {
 						|<span>Runtime {movie.runtime + " mins"}</span> |
 						<span>language: {movie?.original_language}</span>
 					</div>
-					<p className="max-w-xs text-xs text-dimWhite text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl">
+					<p className="max-w-xs text-xs font-medium text-white text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl">
 						{movie?.overview}
 					</p>
 					<div className="flex items-center mt-8 space-x-5 transition-all duration-500 ease-in group">
@@ -41,7 +40,7 @@ const Banner = ({ movie }) => {
 					</div>
 				</div>
 			</div>
-            <div className="absolute inset-0 z-50 w-full h-full bg-black opacity-50"></div>
+			<div className="absolute inset-0 z-50 w-full h-full bg-black opacity-50"></div>
 		</div>
 	);
 };

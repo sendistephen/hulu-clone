@@ -5,7 +5,6 @@ import Link from "next/link";
 
 // eslint-disable-next-line react/display-name
 const Thumbnail = forwardRef(({ result }, ref) => {
-	console.log(result);
 	const slugStart =
 		result?.name || result?.original_name || result?.original_title?.split(":").join("");
 	const slugFinal = slugStart?.split(" ").join("-");
